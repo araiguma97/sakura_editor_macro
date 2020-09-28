@@ -1,10 +1,10 @@
 (function(){
 	SelectAll();
 	var str     = GetSelectedString;
-	var index   = str.indexOf('---');
-	var jisseki = str.substring(0, index);
-	var yotei   = str.slice(index + 5 /* '---' + '\r\n' */);
-	var out    = '*—\’è*\r\n' + jisseki + '\r\n*ÀÑ*\r\n' + yotei
+	var items   = str.split('---\r\n');
+	var jisseki = items[1];
+	var yotei   = items[0];
+	var out     = '*ÀÑ*\r\n' + jisseki + '\r\n\r\n*—\’è*\r\n' + yotei;
 	CopyString(out);
 })();
 
